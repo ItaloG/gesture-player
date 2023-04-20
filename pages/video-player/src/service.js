@@ -13,7 +13,7 @@ export default class Service {
 
   async loadModel() {
     this.#model = await this.#faceLandmarksDetection.load(
-      this.#faceLandmarksDetection.SupportedPackages.mediaPipeFaceMesh,
+      this.#faceLandmarksDetection.SupportedPackages.mediapipeFacemesh,
       { maxFaces: 1 }
     );
   }
@@ -71,7 +71,7 @@ export default class Service {
     return false;
   }
 
-  #estimateFaces(video) {
+  async #estimateFaces(video) {
     return this.#model.estimateFaces({
       input: video,
       returnTensors: false,
