@@ -71,7 +71,7 @@ export default class Service {
     return false;
   }
 
-  async #estimateFaces(video) {
+  #estimateFaces(video) {
     return this.#model.estimateFaces({
       input: video,
       returnTensors: false,
